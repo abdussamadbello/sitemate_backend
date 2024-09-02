@@ -5,14 +5,8 @@ This project consists of a client and server application designed for managing i
 
 ## Project Structure
 
-client/
-    .gitignore
-    cli/
-        api/
-            issueApi.js
-        index.js
-    package.json
-server/
+
+```server/
     .gitignore
     controllers/
         issueController.js
@@ -24,6 +18,14 @@ server/
     package.json
     routes/
         issueRoutes.js
+client/
+    .gitignore
+    cli/
+        api/
+            issueApi.js
+        index.js
+    package.json```
+
 
 ### Server
 
