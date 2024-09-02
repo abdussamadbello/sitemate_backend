@@ -36,7 +36,7 @@ const updateIssue = (req, res) => {
 const deleteIssue = (req, res) => {
     const deletedIssue = issueModel.deleteIssue(req.params.id);
     if (deletedIssue) {
-        print(deletedIssue);
+        console.log(deletedIssue);
         res.json(deletedIssue);
     } else {
         res.status(404).json({ message: 'Issue not found' });
