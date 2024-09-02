@@ -107,8 +107,8 @@ These commands are implemented in the `client/cli/api/issueApi.js` file.
 
 ```bash
 # Fetch all issues
-node cli.js list
+node index.js list
 
 # Create a new issue
-node cli.js create -n "New Issue" -d "Description of the new issue"
+node index.js create -n "New Issue" -d "Description of the new issue"
 ```
