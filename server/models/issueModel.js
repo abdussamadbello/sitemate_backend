@@ -1,37 +1,32 @@
-const { v4: uuidv4 } = require('uuid');
+const { Issue } = require('../database/database');
 
-
-const issues = [];
-
-const getAllIssues = () => {
-    return issues;
+const getAllIssues = async () => {
+    return await Issue.findAll();
 };
 
-const getIssueById = (id) => {
-    return issues.find(issue => issue.id === id);
+const getIssueById = async (id) => {
+    return await Issue.findByPk(id);
 };
 
-const createIssue = (issue) => {
-    issue.id = uuidv4();
-    issues.push(issue);
-    return issue;
+const createIssue = async (issue) => {
+    return await Issue.create(issue);
 };
 
-const updateIssue = (id, updatedIssue) => {
-    const index = issues.findIndex(issue => issue.id === id);
-    if (index !== -1) {
-        issues[index] = { ...issues[index], ...updatedIssue };
-        return issues[index];
+const updateIssue = async (id, updatedIssue) => {
+    const issue = await Issue.findByPk(id);
+    if (issue) {
+        return await issue.update(updatedIssue);
     }
     return null;
 };
 
-const deleteIssue = (id) => {
-    const index = issues.findIndex(issue => issue.id === id);
-    if (index !== -1) {
-        return issues.splice(index, 1);
+const deleteIssue = async (id) => {
+    const issue = await Issue.findByPk(id);
+    if (issue) {
+        await issue.destroy();
+        return true;
     }
-    return null;
+    return false;
 };
 
 module.exports = {

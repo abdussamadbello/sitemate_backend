@@ -12,6 +12,8 @@ server/
     controllers/
         issueController.js
     index.js
+    database/
+        database.js
     models/
         issueModel.js
         test/

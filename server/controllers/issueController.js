@@ -3,6 +3,7 @@ const issueModel = require('../models/issueModel');
 
 const getIssues = (req, res) => {
     const issues = issueModel.getAllIssues();
+    console.log(issues);
     res.json(issues);
 };
 
